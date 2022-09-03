@@ -1,0 +1,28 @@
+{
+    "name": "arclang",
+    "displayName": "ArcLang",
+    "description": "Arc Programming Language",
+    "version": "0.0.1",
+    "author": "Orphoros CTC",
+    "publisher": "Orphoros CTC",
+    "license": "GPL-3.0-only",
+    "engines": {
+        "vscode": "^1.64.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "arc",
+            "aliases": ["ArcLang", "arc"],
+            "extensions": [".arc"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "arc",
+            "scopeName": "source.arc",
+            "path": "./syntaxes/arc.tmLanguage.json"
+        }]
+    }
+}

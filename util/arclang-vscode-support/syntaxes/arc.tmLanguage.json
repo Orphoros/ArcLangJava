@@ -1,0 +1,85 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Arc Programming Language",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#types"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#reserved"
+		},
+		{
+			"include": "#ctrl-statements"
+		},
+		{
+			"include": "#functions"
+		},
+		{
+			"include": "#variables"
+		}
+	],
+	"repository": {
+		"functions": {
+			"patterns": [{
+				"name": "entity.name.function.arc",
+				"match": "\\b((\\w+)\\s*(?=\\(.*\\)))\\b"
+			}]
+		},
+		"ctrl-statements": {
+			"patterns": [{
+				"name": "keyword.control.arc",
+				"match": "\\b(rep|itr|is|yes|no|stop)\\b"
+			}]
+		},
+		"types": {
+			"patterns": [{
+				"name": "entity.name.type.arc",
+				"match": "\\b(num|frac|text|logic|func)\\b"
+			}]
+		},
+		"reserved": {
+			"patterns": [{
+				"name": "constant.language.arc",
+				"match": "\\b(nil|val|inval)\\b"
+			}]
+		},
+		"variables": {
+			"patterns": [{
+				"name": "variable.other.arc",
+				"match": "\\b([a-zA-Z](\\w+)?)\\b"
+			}]
+		},
+		"numbers": {
+			"patterns": [{
+				"name": "constant.numeric.arc",
+				"match": "\\b([+-]?([0-9]*[.])?[0-9]+)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.arc",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.arc",
+					"match": "\\\\."
+				}
+			]
+		},
+		"comments": {
+			"name": "comment.line.double-slash.arc",
+			"begin": "//",
+			"end": "\\n"
+		}
+	},
+	"scopeName": "source.arc"
+}
